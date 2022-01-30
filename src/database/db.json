@@ -1,0 +1,85 @@
+{
+  "tasks": [
+    {
+      "title": "Dinner",
+      "author": "Tomas",
+      "completed": false,
+      "id": 4,
+      "user_id": 1,
+      "user": {
+        "id": 1,
+        "name": "Tomas",
+        "email": "tomas@gmail.com",
+        "picture": "https://iupac.org/wp-content/uploads/2018/05/default-avatar.png"
+      }
+    },
+    {
+      "title": "Get sick",
+      "author": "Tomas",
+      "completed": false,
+      "id": 6,
+      "user_id": 1,
+      "user": {
+        "id": 1,
+        "name": "Tomas",
+        "email": "tomas@gmail.com",
+        "picture": "https://iupac.org/wp-content/uploads/2018/05/default-avatar.png"
+      }
+    },
+    {
+      "title": "PLAN HOLIDAYS",
+      "author": "Tomas",
+      "completed": false,
+      "id": 7,
+      "user_id": 1,
+      "user": {
+        "id": 1,
+        "name": "Tomas",
+        "email": "tomas@gmail.com",
+        "picture": "https://iupac.org/wp-content/uploads/2018/05/default-avatar.png"
+      }
+    },
+    {
+      "title": "CHANGE TODO-LIST STYLE",
+      "author": "Tomas",
+      "completed": false,
+      "priority": "High",
+      "id": 8,
+      "user_id": 1,
+      "user": {
+        "id": 1,
+        "name": "Tomas",
+        "email": "tomas@gmail.com",
+        "picture": "https://iupac.org/wp-content/uploads/2018/05/default-avatar.png"
+      }
+    },
+    {
+      "title": "Test",
+      "author": "",
+      "completed": false,
+      "priority": "Low",
+      "user_id": "2",
+      "id": 9
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Tomas",
+      "email": "tomas@gmail.com",
+      "picture": "https://iupac.org/wp-content/uploads/2018/05/default-avatar.png"
+    },
+    {
+      "id": 2,
+      "name": "Saulius",
+      "email": "saulius@gmail.com",
+      "picture": "https://iupac.org/wp-content/uploads/2018/05/default-avatar.png"
+    },
+    {
+      "id": 3,
+      "name": "Jonas",
+      "email": "jonas@gmail.com",
+      "picture": "https://iupac.org/wp-content/uploads/2018/05/default-avatar.png"
+    }
+  ]
+}

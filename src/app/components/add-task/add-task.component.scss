@@ -1,0 +1,19 @@
+// :host {
+//     input.ng-dirty {
+//         background:red;
+//     }
+// }
+
+:host {
+        input {
+        width: 100%;
+    }
+    select {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn-reset {
+        width: 100%;
+    }
+}

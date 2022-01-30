@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-lg-10 col-sm-8">
+    <div *ngFor="let user of users">
+      <div class="users-wrapper mb-3">
+        <div class="avatar">
+          <img class="user-picture" [src]="user.picture" alt="user.name">
+        </div>
+        <div class="user-name">
+          Name: {{ user.name }}
+        </div>
+        <div class="user-email">
+          Email: {{ user.email }}
+        </div>
+        <div class="user-id">
+          ID: {{ user.id }}
+        </div>
+        <div class="options">
+          <a (click)="toggleUserDetails(user)" class="btn bg-light me-2 text-dark"><i class="bi bi-menu-button-wide"></i></a>
+          <button (click)="deleteUser(user)" class="btn btn-danger bg-danger"><i class="bi bi-trash"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-2 col-sm-4 h-100" id="sidebar2">
+    <div class="card">
+      <div class="card-header secondary-color text-white">
+        Create User
+      </div>
+      <div class="card-body">
+        <app-add-user (newItemEvent)="getUsers()"></app-add-user>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="showUserDetails">
+  <app-user-details 
+    [user]="selectedUser" 
+    class="user-details-container"
+    (userDetailsCloseEvent)="toggleUserDetails(null, true)"
+    >
+  </app-user-details>
+  <div class="user-details-overlay"
+  (click)="toggleUserDetails(null, true)"
+  >
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<!-- <div class="alert alert-danger" *ngIf="taskForm.submitted && taskForm.invalid">
+    <div *ngIf="title.errors?.['required']">
+      Title is required
+    </div>
+    <div *ngIf="title.errors?.['minlength']">
+      Title too short
+    </div>
+    <div *ngIf="priority.errors?.['required']">
+      Priority is required
+    </div>
+</div> -->
+
+<form (ngSubmit)="taskCreate(taskForm)" #taskForm="ngForm">
+    <div class="row">
+        <div class="form-group">
+            <input type="text"
+            [(ngModel)]="task.title" 
+            placeholder="Task Title" 
+            name="title"
+            required
+            minlength="4"
+            #title="ngModel"
+            class="form-controll is-valid"
+            [class.is-valid]="title.valid"
+            [class.is-invalid]="title.invalid && title.dirty"
+            />
+            <div *ngIf="title.valid && title.dirty" class="valid-feedback">
+                Looks good!
+            </div>
+            <div *ngIf="title.invalid && title.dirty">
+                Title is too short
+            </div>
+        </div>
+        <label for="priority">Priority:</label>
+        <select class="mb-3" 
+        name="priority" 
+        required
+        [(ngModel)]="task.priority"
+        #priority="ngModel"
+        [class.is-valid]="priority.valid"
+        [class.is-invalid]="priority.invalid && taskForm.submitted">
+            <option value="" disabled>Select</option>
+            <option value="high" [ngValue]="'High'">High</option>
+            <option value="low" [ngValue]="'Low'">Low</option>
+        </select>
+        <label>User:</label>
+        <select name="user_id" class="mb-3" [(ngModel)]="task.user_id">
+            <option value="0" disabled>Select</option>
+            <option *ngFor="let user of users" [value]="user.id">
+                {{ user.email }} - {{ user.id }}
+            </option>
+        </select>
+        <div class="form-group">
+            <input type="submit"
+            [disabled]="taskForm.invalid"
+            class="btn btn-primary" 
+            value="Add Task">
+            <button 
+            type="button" 
+            class="btn btn-secondary btn-reset mt-2"
+            (click)="taskForm.resetForm()">
+            Reset Form
+            </button>
+        </div>
+    </div>
+</form>

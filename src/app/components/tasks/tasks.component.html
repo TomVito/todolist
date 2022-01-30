@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-10">
+      <div *ngFor="let task of tasks" [class.task-completed]="task.completed">
+        <div class="tasks-wrapper text-center">
+          <div class="status">
+            Completed:
+            <input type="checkbox" [checked]="task.completed"
+              (change)="toggleTask(task)">
+          </div>
+          <div class="title">
+            <i class="bi bi-list-task"></i> {{ task.title }}
+          </div>
+          <div *ngIf="task.user" class="user">
+            <a routerLink="/users/{{ task.user_id }}">
+              <i class="bi bi-person-lines-fill"></i>
+            </a>
+          </div>
+          <div class="id">
+            ID: {{ task.id }}
+          </div>
+          <div class="priority">
+            Priority: {{ task.priority }}
+          </div>
+          <div class="options">
+            <a (click)="toggleTaskDetails(task)" class="btn bg-light me-2 text-dark"><i class="bi bi-menu-button-wide"></i></a>
+            <button (click)="deleteTask(task)" class="btn btn-danger bg-danger"><i class="bi bi-trash"></i></button>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-lg-2 col-sm-4 h-100" id="sidebar2">
+    <div class="card">
+      <div class="card-header text-white">
+        Create Task
+      </div>
+      <div class="card-body">
+        <app-add-task (newItemEvent)="getTasks()"></app-add-task>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="showTaskDetails">
+  <app-task-details 
+    [task]="selectedTask" 
+    class="task-details-container"
+    (taskDetailsCloseEvent)="toggleTaskDetails(null, true)"
+    >
+  </app-task-details>
+  <div class="task-details-overlay"
+  (click)="toggleTaskDetails(null, true)"
+  >
+  </div>
+</div>

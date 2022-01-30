@@ -1,0 +1,31 @@
+<!-- <div class="row justify-content-center mt-5">
+    <div class="col-3">
+      <div class="card mb-3 text-center">
+        <div class="title card-header">
+          <h3> {{task.title}} </h3>
+        </div>
+        <div class="details card-body">
+          <p>Author: {{task.author }} </p>
+          <p>ID: {{task.id}} </p>
+        </div>
+        <div class="options card-footer">
+            <a class="btn btn-success mt-2" [routerLink]="['']">
+                Back
+            </a> 
+        </div>
+      </div>
+    </div>
+</div> -->
+
+<div class="task-details-container">
+  <h2>
+    To Do: {{ task?.title }}
+  </h2>
+  <h2>
+    User: {{ task?.user?.email }}
+  </h2>
+  <h2>
+    ID: {{ task?.id }}
+  </h2>
+  <button (click)="closeTaskDetails()" class="btn btn-danger">Close</button>
+</div>
